@@ -1,0 +1,33 @@
+* {
+  transition: all 250ms ease-in-out;
+}
+
+.app {
+  width: 93%;
+  max-width: 600px;
+  margin: auto;
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.field__label {
+  width: 100%;
+}
+
+.field__textarea {
+  resize: none;
+  width: 100%;
+}
+
+.hide {
+  opacity: 0;
+}
