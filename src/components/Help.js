@@ -18,6 +18,9 @@ function Help(props) {
           Hold 'shift' and up/down arrows to rearrange fields
         </li>
         <li className={className}>
+          Highlight, copy, and paste the log below when done
+        </li>
+        <li className={className}>
           Works best on Firefox or Chrome. No promises for Safari or Internet
           Explorer!
         </li>

@@ -6,7 +6,6 @@ import Header from "./components/Header";
 import Help from "./components/Help";
 import welcomeCallQuestions from "./welcomeCallQuestions";
 
-
 const insert = (arr, index, newItem) => [
   ...arr.slice(0, index),
   newItem,
@@ -17,11 +16,11 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      siteTitle: "Welcome Call Helper App",
+      siteTitle: "Welcome Call Helper",
       fields: [],
       fieldToAdd: "",
       currentKey: 0,
-      displayLog: false,
+      displayLog: true,
       displayHelp: true,
       themeIsLight: true,
     };
@@ -118,11 +117,11 @@ class App extends React.Component {
       ? JSON.parse(localStorage.getItem("fields"))
       : welcomeCallQuestions;
     const displayLog =
-      localStorage.getItem("displayLog") === "true" ? true : false;
+      localStorage.getItem("displayLog") === "false" ? false : true;
     const displayHelp =
-      localStorage.getItem("displayHelp") === "true" ? true : false;
+      localStorage.getItem("displayHelp") === "false" ? false : true;
     const themeIsLight =
-      localStorage.getItem("themeIsLight") === "true" ? true : false;
+      localStorage.getItem("themeIsLight") === "false" ? false : true;
     this.setState({
       fields: fields,
       currentKey: currentKey,
