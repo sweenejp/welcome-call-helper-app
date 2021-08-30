@@ -4,6 +4,8 @@ import Field from "./components/Field";
 import Log from "./components/Log";
 import Header from "./components/Header";
 import Help from "./components/Help";
+import welcomeCallQuestions from "./welcomeCallQuestions";
+
 
 const insert = (arr, index, newItem) => [
   ...arr.slice(0, index),
@@ -15,7 +17,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      siteTitle: "Question Logger",
+      siteTitle: "Welcome Call Helper App",
       fields: [],
       fieldToAdd: "",
       currentKey: 0,
@@ -114,7 +116,7 @@ class App extends React.Component {
       : 0;
     const fields = localStorage.getItem("fields")
       ? JSON.parse(localStorage.getItem("fields"))
-      : [];
+      : welcomeCallQuestions;
     const displayLog =
       localStorage.getItem("displayLog") === "true" ? true : false;
     const displayHelp =
@@ -168,7 +170,7 @@ class App extends React.Component {
               onClick={() => {
                 if (
                   window.confirm(
-                    "Are you sure you want to reset everything? This will delete all the fields you created."
+                    "Are you sure you want to reset everything? This will delete any fields you created and bring back the original questions that were here at the start."
                   )
                 ) {
                   localStorage.clear();
