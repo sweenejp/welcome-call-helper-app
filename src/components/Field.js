@@ -11,7 +11,7 @@ function Field(props) {
           name={props.identifier}
           onChange={props.handleTextareaChange}
           value={props.value}
-          onKeyDown={props.handleKeyUp}
+          onKeyUp={props.handleKeyUp}
         ></textarea>
       </div>
     </div>
