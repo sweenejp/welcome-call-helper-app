@@ -19,7 +19,7 @@ class App extends React.Component {
       siteTitle: "Welcome Call Helper",
       fields: [],
       fieldToAdd: "",
-      currentKey: 10,
+      currentKey: 11,
       displayLog: true,
       displayHelp: true,
       themeIsLight: true,
