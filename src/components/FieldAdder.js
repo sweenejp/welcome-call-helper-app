@@ -7,6 +7,7 @@ function FieldAdder(props) {
         Add a field:
       </label>
       <input
+        className="field-adder__input"
         type="text"
         name="fieldToAdd"
         onChange={props.handleChange}

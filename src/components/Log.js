@@ -1,20 +1,11 @@
 import React from "react";
 
 function Log(props) {
-  const logItems = props.logData.map((logItem) => {
-    const paragraphs = logItem.value
-      .split("\n")
-      .map((item, index) => <p key={logItem + item + index}>{item}</p>);
-    return (
-      <div
-        className={props.display ? "log-item" : "log-item hide"}
-        key={logItem.identifier}
-      >
-        <p className="log-item__field-name">{logItem.name}:</p>
-        {paragraphs}
-      </div>
-    );
-  });
+  const logItems = props.logData.map((logItem) => (
+    <p className="log-item" key={logItem.identifier}>
+      {logItem.name}: {logItem.value}
+    </p>
+  ));
   return (
     <div className="log">
       <button name="displayLog" onClick={props.toggle}>

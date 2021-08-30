@@ -3,7 +3,7 @@
   --secondarycolor: #76d5d4;
   --tertiarycolor: #ea067e;
   --fourthcolor: #d2db0e;
-  --textareabackgroundcolor: white;
+  --inputbackgroundcolor: white;
   --headercolor: white;
   --headerbackgroundcolor: #722362;
 }
@@ -14,7 +14,7 @@
   --tertiarycolor: #ea067e;
   --fourthcolor: #d2db0e;
   --backgroundcolor: #76d5d4;
-  --textareabackgroundcolor: white;
+  --inputbackgroundcolor: white;
   --headercolor: white;
   --headerbackgroundcolor: #722362;
   --textcolor: black;
@@ -24,7 +24,7 @@
   --primarycolor: #76d5d4;
   --secondarycolor: #722362;
   --backgroundcolor: rgb(31, 31, 31);
-  --textareabackgroundcolor: #722362;
+  --inputbackgroundcolor: #722362;
   --headerbackgroundcolor: #310a29;
   --textcolor: white;
 }
@@ -55,7 +55,7 @@ label {
   color: var(--textcolor);
 }
 
-input {
+.field-adder__label {
   width: 100%;
   border: none;
   border-radius: 5px;
@@ -63,15 +63,26 @@ input {
   padding: 5px;
   transition: none;
   margin-top: 1em;
-  background-color: var(--textareabackgroundcolor);
+  background-color: var(--inputbackgroundcolor);
   color: var(--textcolor);
 }
 
-textarea {
-  resize: none;
-  background-color: var(--textareabackgroundcolor);
+.field-adder__input {
+  background-color: var(--inputbackgroundcolor);
   width: 100%;
-  height: 55px;
+  height: 35px;
+  padding: 3px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  transition: none;
+  color: var(--textcolor);
+}
+
+.field__input {
+  background-color: var(--inputbackgroundcolor);
+  width: 100%;
+  height: 35px;
   padding: 3px;
   border: none;
   border-left: solid 10px var(--primarycolor);
@@ -81,11 +92,11 @@ textarea {
   color: var(--textcolor);
 }
 
-textarea:hover,
+.field__input:hover,
 input:hover {
   outline: solid 2px var(--fourthcolor);
 }
-textarea:focus,
+.field__input:focus,
 input:focus {
   outline: solid 2px var(--tertiarycolor);
 }
@@ -148,11 +159,6 @@ ul ::marker {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-.field__textarea {
-  resize: none;
-  width: 100%;
 }
 
 .log {
