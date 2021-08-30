@@ -19,7 +19,7 @@ class App extends React.Component {
       siteTitle: "Welcome Call Helper",
       fields: [],
       fieldToAdd: "",
-      currentKey: 0,
+      currentKey: 10,
       displayLog: true,
       displayHelp: true,
       themeIsLight: true,
@@ -112,7 +112,7 @@ class App extends React.Component {
   componentDidMount() {
     const currentKey = localStorage.getItem("currentKey")
       ? parseInt(localStorage.getItem("currentKey"))
-      : 0;
+      : 11;
     const fields = localStorage.getItem("fields")
       ? JSON.parse(localStorage.getItem("fields"))
       : welcomeCallQuestions;
