@@ -1,13 +1,3 @@
-:root {
-  --primarycolor: #722362;
-  --secondarycolor: #76d5d4;
-  --tertiarycolor: #ea067e;
-  --fourthcolor: #d2db0e;
-  --inputbackgroundcolor: white;
-  --headercolor: white;
-  --headerbackgroundcolor: #722362;
-}
-
 .theme-light {
   --primarycolor: #722362;
   --secondarycolor: #76d5d4;
@@ -23,8 +13,11 @@
 .theme-dark {
   --primarycolor: #76d5d4;
   --secondarycolor: #722362;
+  --tertiarycolor: #ea067e;
+  --fourthcolor: #d2db0e;
   --backgroundcolor: rgb(31, 31, 31);
   --inputbackgroundcolor: #722362;
+  --headercolor: white;
   --headerbackgroundcolor: #310a29;
   --textcolor: white;
 }
@@ -41,6 +34,21 @@ header {
   background-color: var(--headerbackgroundcolor);
   color: var(--headercolor);
   padding: 1em;
+}
+
+.header__flex-box {
+  display: flex;
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  justify-content: space-between;
+}
+
+.header__button {
+  align-self: center;
+  margin: 0;
+  background-color: var(--headerbackgroundcolor);
+  color: var(--headercolor);
 }
 
 main {
@@ -79,7 +87,8 @@ label {
   color: var(--textcolor);
 }
 
-.field__input {
+.field__input,
+textarea {
   background-color: var(--inputbackgroundcolor);
   width: 100%;
   height: 35px;
@@ -93,12 +102,18 @@ label {
 }
 
 .field__input:hover,
-input:hover {
+input:hover,
+textarea:hover {
   outline: solid 2px var(--fourthcolor);
 }
 .field__input:focus,
-input:focus {
+input:focus,
+textarea:focus {
   outline: solid 2px var(--tertiarycolor);
+}
+
+textarea {
+  height: 300px;
 }
 
 button {
@@ -141,6 +156,11 @@ ul ::marker {
   position: relative;
 }
 
+.sub-app__title {
+  color: var(--textcolor);
+  margin-bottom: 0.5em;
+}
+
 .menu {
   display: flex;
 }
@@ -171,4 +191,22 @@ ul ::marker {
 
 .hide {
   font-size: 0;
+  display: none;
+}
+
+.text-parser__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-parser__container button {
+  width: fit-content;
+}
+
+.text-parser__notice {
+  display: none;
+}
+
+.show {
+  display: block;
 }
