@@ -5,7 +5,9 @@ function Header(props) {
   return (
     <header>
       <div className="header__flex-box">
-        <h1 className="header__title">{props.siteTitle}</h1>
+        <Link className="header__title" to="/" name="Home">
+          <h1>{props.siteTitle}</h1>
+        </Link>
         <button
           className="header__button"
           onClick={props.toggle}
@@ -16,7 +18,11 @@ function Header(props) {
         <Link className="header__button" to="/text-parser" name="GVTextParser">
           GV Text Parser
         </Link>
-        <Link className="header__button" to="/" name="WCHelper">
+        <Link
+          className="header__button"
+          to="/welcome-call-helper"
+          name="WCHelper"
+        >
           WC Helper
         </Link>
       </div>

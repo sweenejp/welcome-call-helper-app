@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import GoogleVoiceTextParser from "./pages/GoogleVoiceTextParser";
 import WelcomeCallHelper from "./pages/WelcomeCallHelper";
 import Header from "./components/Header";
+import Home from "./pages/Home";
 
 class App extends React.Component {
   constructor(props) {
@@ -29,8 +30,6 @@ class App extends React.Component {
 
   componentDidUpdate() {
     localStorage.setItem("themeIsLight", this.state.themeIsLight);
-    localStorage.setItem("displayWCHelper", this.state.displayWCHelper);
-    localStorage.setItem("displayGVTextParser", this.state.displayGVTextParser);
   }
 
   render() {
@@ -47,7 +46,12 @@ class App extends React.Component {
             themeIsLight={this.state.themeIsLight}
           />
           <Switch>
-            <Route path="/" exact component={() => <WelcomeCallHelper />} />
+            <Route path="/" exact component={() => <Home />} />
+            <Route
+              path="/welcome-call-helper"
+              exact
+              component={() => <WelcomeCallHelper />}
+            />
             <Route
               path="/text-parser"
               exact

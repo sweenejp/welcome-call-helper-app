@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap");
+
+:root {
+  font-family: "Open Sans", sans-serif;
+}
+
 .theme-light {
   --primarycolor: #722362;
   --secondarycolor: #76d5d4;
@@ -7,7 +13,9 @@
   --inputbackgroundcolor: white;
   --headercolor: white;
   --headerbackgroundcolor: #722362;
+  --titlecolor: #722362;
   --textcolor: black;
+  --textcolorreverse: white;
 }
 
 .theme-dark {
@@ -19,7 +27,9 @@
   --inputbackgroundcolor: #722362;
   --headercolor: white;
   --headerbackgroundcolor: #310a29;
+  --titlecolor: white;
   --textcolor: white;
+  --textcolorreverse: black;
 }
 
 * {
@@ -27,28 +37,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-header {
-  text-align: center;
-  background-color: var(--headerbackgroundcolor);
-  color: var(--headercolor);
-  padding: 1em;
-}
-
-.header__flex-box {
-  display: flex;
-  width: 100%;
-  max-width: 800px;
-  margin: auto;
-  justify-content: space-between;
-}
-
-.header__button {
-  align-self: center;
-  margin: 0;
-  background-color: var(--headerbackgroundcolor);
-  color: var(--headercolor);
 }
 
 main {
@@ -63,57 +51,11 @@ label {
   color: var(--textcolor);
 }
 
-.field-adder__label {
-  width: 100%;
-  border: none;
-  border-radius: 5px;
-  height: 30px;
-  padding: 5px;
-  transition: none;
-  margin-top: 1em;
-  background-color: var(--inputbackgroundcolor);
-  color: var(--textcolor);
-}
-
-.field-adder__input {
-  background-color: var(--inputbackgroundcolor);
-  width: 100%;
-  height: 35px;
-  padding: 3px;
-  border: none;
-  border-radius: 5px;
-  margin-bottom: 5px;
-  transition: none;
-  color: var(--textcolor);
-}
-
-.field__input,
-textarea {
-  background-color: var(--inputbackgroundcolor);
-  width: 100%;
-  height: 35px;
-  padding: 3px;
-  border: none;
-  border-left: solid 10px var(--primarycolor);
-  border-radius: 5px;
-  margin-bottom: 5px;
-  transition: none;
-  color: var(--textcolor);
-}
-
-.field__input:hover,
-input:hover,
-textarea:hover {
-  outline: solid 2px var(--fourthcolor);
-}
-.field__input:focus,
-input:focus,
-textarea:focus {
-  outline: solid 2px var(--tertiarycolor);
-}
-
-textarea {
-  height: 300px;
+header {
+  text-align: center;
+  background-color: var(--headerbackgroundcolor);
+  color: var(--headercolor);
+  padding: 1em;
 }
 
 button {
@@ -157,12 +99,126 @@ ul ::marker {
 }
 
 .sub-app__title {
-  color: var(--textcolor);
+  color: var(--titlecolor);
   margin-bottom: 0.5em;
+}
+
+/* Header */
+
+.header__title {
+  color: var(--headercolor);
+  text-decoration: none;
+}
+
+.header__flex-box {
+  display: flex;
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  justify-content: space-between;
+}
+
+.header__button {
+  align-self: center;
+  margin: 0;
+  background-color: var(--headerbackgroundcolor);
+  color: var(--headercolor);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.header__button:hover,
+.header__button:focus,
+.header__title:hover,
+.header__title:focus {
+  color: var(--fourthcolor);
 }
 
 .menu {
   display: flex;
+}
+
+/* Home */
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  padding: 2em;
+  background-color: var(--primarycolor);
+  text-align: center;
+  margin: 1em;
+  border-radius: 5px;
+  font-size: 1.3em;
+}
+
+.card:hover,
+.card:focus {
+  opacity: 0.85;
+}
+
+.card__link {
+  text-decoration: none;
+  color: var(--textcolorreverse);
+}
+/* WC Helper */
+
+.field-adder__label {
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  height: 30px;
+  padding: 5px;
+  transition: none;
+  margin-top: 1em;
+  background-color: var(--inputbackgroundcolor);
+  color: var(--textcolor);
+}
+
+.field-adder__input {
+  background-color: var(--inputbackgroundcolor);
+  width: 100%;
+  height: 35px;
+  padding: 3px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  transition: none;
+  color: var(--textcolor);
+}
+
+.field__input {
+  height: 35px;
+}
+
+.text-parser__textarea {
+  height: 300px;
+}
+
+.field__input,
+.text-parser__textarea {
+  background-color: var(--inputbackgroundcolor);
+  width: 100%;
+  padding: 3px;
+  border: none;
+  border-left: solid 10px var(--primarycolor);
+  border-radius: 5px;
+  margin-bottom: 5px;
+  transition: none;
+  color: var(--textcolor);
+}
+
+.field__input:hover,
+input:hover,
+.text-parser__textarea:hover {
+  outline: solid 2px var(--fourthcolor);
+}
+.field__input:focus,
+input:focus,
+.text-parser__textarea:focus {
+  outline: solid 2px var(--tertiarycolor);
 }
 
 .field-adder {
@@ -193,6 +249,8 @@ ul ::marker {
   font-size: 0;
   display: none;
 }
+
+/* GV Text Parser */
 
 .text-parser__container {
   display: flex;
