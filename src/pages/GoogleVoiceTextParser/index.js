@@ -54,6 +54,16 @@ class GoogleVoiceTextParser extends React.Component {
     return (
       <main className="app">
         <div className="text-parser__container">
+          <ul>
+            <li className="help__list-item">
+              Copy and paste a text conversation from Google Voice into the box
+              below.
+            </li>
+            <li className="help__list-item">Click "parse"</li>
+            <li className="help__list-item">
+              The annoying duplicate messages get removed!
+            </li>
+          </ul>
           <h2 className="sub-app__title">Google Voice Text Parser</h2>
           <textarea
             name="in"
