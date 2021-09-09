@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import GoogleVoiceTextParser from "./apps/GoogleVoiceTextParser";
-import WelcomeCallHelper from "./apps/WelcomeCallHelper";
+import GoogleVoiceTextParser from "./pages/GoogleVoiceTextParser";
+import WelcomeCallHelper from "./pages/WelcomeCallHelper";
 import Header from "./components/Header";
 
 class App extends React.Component {
