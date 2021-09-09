@@ -27,6 +27,29 @@ class GoogleVoiceTextParser extends React.Component {
       navigator.clipboard.writeText(updatedOut);
     }
   }
+
+  componentDidMount() {
+    const inValue = localStorage.getItem("GVTPin")
+      ? localStorage.getItem("GVTPin")
+      : "";
+    const outValue = localStorage.getItem("GVTPout")
+      ? localStorage.getItem("GVTPout")
+      : "";
+    const displayNotice =
+      localStorage.getItem("GVTPdisplayNotice") === "true" ? true : false;
+    this.setState({
+      in: inValue,
+      out: outValue,
+      displayNotice: displayNotice,
+    });
+  }
+
+  componentDidUpdate() {
+    localStorage.setItem("GVTPin", this.state.in);
+    localStorage.setItem("GVTPout", this.state.out);
+    localStorage.setItem("GVTPdisplayNotice", this.state.displayNotice);
+  }
+
   render() {
     return (
       <main className="app">
@@ -36,7 +59,7 @@ class GoogleVoiceTextParser extends React.Component {
             name="in"
             value={this.state.in}
             onChange={this.handleChange}
-            className="text-parser__in"
+            className="text-parser__textarea in"
           ></textarea>
           <div className="button-container">
             <button onClick={this.parse}>Parse!</button>
@@ -56,7 +79,7 @@ class GoogleVoiceTextParser extends React.Component {
             readOnly={true}
             name="out"
             value={this.state.out}
-            className="text-parser__out"
+            className="text-parser__textarea out"
           ></textarea>
         </div>
       </main>
