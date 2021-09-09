@@ -107,16 +107,16 @@ class WelcomeCallHelper extends React.Component {
   }
 
   componentDidMount() {
-    const currentKey = localStorage.getItem("currentKey")
-      ? parseInt(localStorage.getItem("currentKey"))
+    const currentKey = localStorage.getItem("WCHcurrentKey")
+      ? parseInt(localStorage.getItem("WCHcurrentKey"))
       : 11;
-    const fields = localStorage.getItem("fields")
-      ? JSON.parse(localStorage.getItem("fields"))
+    const fields = localStorage.getItem("WCHfields")
+      ? JSON.parse(localStorage.getItem("WCHfields"))
       : welcomeCallQuestions;
     const displayLog =
-      localStorage.getItem("displayLog") === "false" ? false : true;
+      localStorage.getItem("WCHdisplayLog") === "false" ? false : true;
     const displayHelp =
-      localStorage.getItem("displayHelp") === "false" ? false : true;
+      localStorage.getItem("WCHdisplayHelp") === "false" ? false : true;
     this.setState({
       fields: fields,
       currentKey: currentKey,
@@ -126,10 +126,10 @@ class WelcomeCallHelper extends React.Component {
   }
 
   componentDidUpdate() {
-    localStorage.setItem("fields", JSON.stringify(this.state.fields));
-    localStorage.setItem("currentKey", this.state.currentKey);
-    localStorage.setItem("displayLog", this.state.displayLog);
-    localStorage.setItem("displayHelp", this.state.displayHelp);
+    localStorage.setItem("WCHfields", JSON.stringify(this.state.fields));
+    localStorage.setItem("WCHcurrentKey", this.state.currentKey);
+    localStorage.setItem("WCHdisplayLog", this.state.displayLog);
+    localStorage.setItem("WCHdisplayHelp", this.state.displayHelp);
   }
 
   render() {
