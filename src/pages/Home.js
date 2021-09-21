@@ -6,7 +6,7 @@ function Home() {
     <main className="home">
       <div className="card-container">
         <Link className="card__link" to="/text-parser" name="GVTextParser">
-          <div className="card">Google Voice Text Parser</div>
+          <div className="card">Google Voice Text Fixer</div>
         </Link>
 
         <Link className="card__link" to="/welcome-call-helper" name="WCHelper">
