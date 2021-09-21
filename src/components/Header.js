@@ -16,7 +16,7 @@ function Header(props) {
           Toggle {props.themeIsLight ? "Dark" : "Light"}
         </button>
         <Link className="header__button" to="/text-parser" name="GVTextParser">
-          GV Text Parser
+          GV Text Fixer
         </Link>
         <Link
           className="header__button"
