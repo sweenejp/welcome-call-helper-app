@@ -64,7 +64,7 @@ class GoogleVoiceTextParser extends React.Component {
               The annoying duplicate messages get removed!
             </li>
           </ul>
-          <h2 className="sub-app__title">Google Voice Text Parser</h2>
+          <h2 className="sub-app__title">Google Voice Text Fixer</h2>
           <textarea
             name="in"
             value={this.state.in}
