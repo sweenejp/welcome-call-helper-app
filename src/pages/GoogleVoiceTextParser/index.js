@@ -20,7 +20,7 @@ class GoogleVoiceTextParser extends React.Component {
 
   parse() {
     this.setState({ displayNotice: false, out: "" });
-    let matches = this.state.in.match(/(Message by .*)/g);
+    let matches = this.state.in.match(/(Message from .*)/g);
     if (matches !== null) {
       const updatedOut = matches.join("\n");
       this.setState({ out: updatedOut, displayNotice: true });
